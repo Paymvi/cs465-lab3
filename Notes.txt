@@ -1,0 +1,5 @@
+
+What I learned
+
+- Do not start with git init because vite makes one anyway
+- "Remove-Item -Recurse -Force .\cs465-lab3-Paymvi\.git" I needed to run this for it to work... I needed to delete the inner git file
