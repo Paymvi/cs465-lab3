@@ -1,34 +1,86 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, { Component } from "react";
 import './App.css'
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import Question from "./components/Question";
+import qBank from './sampleQuizFile.json';
+import Score from "./components/Score";
+
+
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [selectedOption, setSelectedOption] = useState("");
+  const [score, setScore] = useState(0);
+  const [quizEnd, setQuizEnd] = useState(false);
+
+  const currentQuestionData = qBank.questions[currentQuestion];
+
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
+  }
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Submitted");
+    checkAnswer();
+    handleNextQuestion();
+  }
+
+  const checkAnswer = () => {
+    if (selectedOption === currentQuestionData.answer){
+      setScore((prev) => prev + 1);
+    }
+  };
+
+  const handleNextQuestion = () => {
+    if (currentQuestion + 1 < qBank.length){
+      setCurrentQuestion((prev) => prev + 1)
+      setSelectedOption("");
+    } else {
+      setQuizEnd(true);
+    }
+  }
+
+console.log("qBank:", qBank);
+console.log("currentQuestion:", currentQuestion);
+
+// Don't forget the .question
+
+if (!currentQuestionData) {
+  console.error("Invalid currentQuestion index:", currentQuestion);
+  return <div>Error: Invalid question index.</div>;
+}
+
+if (currentQuestion >= qBank.length || currentQuestion < 0) {
+  return <div>Invalid question index. Something went wrong!</div>;
+}
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+    
+    <div className="App d-flex flex-column align-items-center justify-content-center">
+      <h1 className="app-title">QUIZ APP</h1>
+
+      
+
+      {!quizEnd ? (
+        <Question
+          question={currentQuestionData}
+          selectedOption={selectedOption}
+          onOptionChange={handleOptionChange}
+          onSubmit={handleFormSubmit}
+        />
+
+      ) : (
+        <Score score={score} className="score"/>
+
+      )
+      }
+
+
+    </div>
   )
 }
 

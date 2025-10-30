@@ -3,3 +3,58 @@ What I learned
 
 - Do not start with git init because vite makes one anyway
 - "Remove-Item -Recurse -Force .\cs465-lab3-Paymvi\.git" I needed to run this for it to work... I needed to delete the inner git file
+
+The difference between .js and .jsx is that .jsx is a javascript file that contains JSX syntax which is HTML-like code inside JSX
+It also has to be "transpiled (converted) into JS using Babel
+Vite automicatically adds and ocnfigures the Babel
+
+The Convention is to use .jsx for components nad .js for logic/utilities
+
+I was geeks for geeks use "class App extends Component {" instead of "function App() {"
+I learned the g4geeks one is an older react style (using class components)... this is pre 2019
+The new one uses functtion components which is a modern React style...
+... it transition this way because Ract introduced Hooks allowing functions to take over and do what classes do and modern
+
+
+I learned that React re-implemented the event system using something called a Synthetic event
+... Its more reliable than vanilla javascript (the wcode works the same in all browsers)
+
+The "onChange, onclick, and onSubmit" have a Javascript equivalent but React wraps them ^^^
+It replaces the ".addEventListener("XXX", ...)"
+
+e.preventDefault is needed to prevent automatically reloading the page
+
+The way you can tell if components are self closing or not is by seeing if they contians children (content inside)
+
+
+This is the way the app flows:
+- index.jsx loads the whole app
+- then it renders App (root component)
+- App.jsx imports everything & controls the data (state)
+- App.jsx passes the data down to the child components... "Question" receives all the properties from "App"
+- Question.jsx receives the props and displays them (doesn't manage the state)
+
+                ▼
+          [index.jsx]
+                ▼
+              <App/>
+      ┌─────────────────────┐
+      │ State:              │
+      │  - currentQuestion  │
+      │  - selectedOption   │
+      │  - score            │
+      │  - quizEnd          │
+      └─────────────────────┘
+       │
+       ├── passes data/functions ▼
+       │
+       ▼
+     <Question/>
+         │
+         └── passes to ▼
+             <Options/>
+                 ▲
+                 │ onChange triggers event → updates App’s state
+                 
+      When quizEnd === true:
+      <Score/> replaces <Question/>
