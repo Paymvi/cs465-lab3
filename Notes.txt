@@ -1,0 +1,123 @@
+
+What I learned
+
+- Do not start with git init because vite makes one anyway
+- "Remove-Item -Recurse -Force .\cs465-lab3-Paymvi\.git" I needed to run this for it to work... I needed to delete the inner git file
+
+The difference between .js and .jsx is that .jsx is a javascript file that contains JSX syntax which is HTML-like code inside JSX
+It also has to be "transpiled (converted) into JS using Babel
+Vite automicatically adds and ocnfigures the Babel
+
+The Convention is to use .jsx for components and .js for logic/utilities
+
+I was geeks for geeks use "class App extends Component {" instead of "function App() {"
+I learned the g4geeks one is an older react style (using class components)... this is pre 2019
+The new one uses functtion components which is a modern React style...
+... it transition this way because Ract introduced Hooks allowing functions to take over and do what classes do and modern
+
+
+I learned that React re-implemented the event system using something called a Synthetic event
+... Its more reliable than vanilla javascript (the wcode works the same in all browsers)
+
+The "onChange, onclick, and onSubmit" have a Javascript equivalent but React wraps them ^^^
+It replaces the ".addEventListener("XXX", ...)"
+
+e.preventDefault is needed to prevent automatically reloading the page
+
+The way you can tell if components are self closing or not is by seeing if they contians children (content inside)
+
+
+This is the way the app flows:
+- main.jsx loads the whole app
+- then it renders App (root component)
+- App.jsx imports everything & controls the data (state)
+- App.jsx passes the data down to the child components... "Question" receives all the properties from "App"
+- Question.jsx receives the props and displays them (doesn't manage the state)
+
+                ▼
+          [main.jsx]
+                ▼
+              <App/>
+      ┌─────────────────────┐
+      │ State:              │
+      │  - currentQuestion  │
+      │  - selectedOption   │
+      │  - score            │
+      │  - quizEnd          │
+      └─────────────────────┘
+       │
+       ├── passes data/functions ▼
+       │
+       ▼
+     <Question/>
+         │
+         └── passes to ▼
+             <Options/>
+                 ▲
+                 │ onChange triggers event → updates App’s state
+                 
+      When quizEnd === true:
+      <Score/> replaces <Question/>
+
+
+Keep changes locally but remove the commit
+git reset --soft HEAD~1
+
+
+Make sure to reset the states when you click on a button
+
+
+I learned how to use Vitest:
+- npm install --save-dev vitest @testing-library/react @testing-library/jest-dom
+- add ""test": "vitest"" to scripts in package.json
+- npm run test
+- add the test file
+- add vitest.config.js and vitest.setup.js
+- install jsdom (simulates a browser)
+
+Note: vitest looks for files like:
+*.test.js
+*.spec.js
+*.test.jsx
+*.spec.jsx
+*.test.ts
+*.spec.ts
+*.test.tsx
+*.spec.tsx
+and it ignores files like node_modules, .git
+
+
+I had v22.11.0 
+You need at least v22.12.0 to work
+
+... useful commands:
+nvm version
+nvm install 22.12.0
+nvm use 22.12.0
+node -v
+
+Make sure you give your nvm folder (C:\Users\nvm) write permissions
+This is how:
+Step 1: Open Properties for the Folder
+  Navigate to the folder in File Explorer, e.g., C:\Users\nvm.
+  Right-click the folder → Properties.
+  Go to the Security tab.
+  Click Edit… to change permissions.
+Step 2: Grant Full Control
+  In the permissions window, select your user account (or Users if you want all accounts to have access).
+  Check Full Control under the “Allow” column.
+  Click Apply, then OK.
+
+...And then you must run:
+npm install --save-dev vitest
+npm list vitest
+
+... verify with:
+npm list vitest
+
+npm install --save-dev jsdom
+
+npm run test
+
+
+

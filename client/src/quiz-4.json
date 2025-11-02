@@ -1,0 +1,48 @@
+{
+	"topic": "Weird Animal Facts",
+	"title": "Weird Animal Facts",
+	"quizMessage": "Test your knowledge of animals with this quiz!",
+	"questions":
+	[
+		{
+			"question": "Which country waged war against emus... and lost?",
+			"options": [
+				"Canada",
+				"South Africa",
+				"Australia",
+				"New Zealand"
+			],
+			"answer": "Australia"
+		},
+		{
+			"question": "Which animal is infamous for stealing Wi-Fi routers for nest material?",
+			"options": [
+				"Crows",
+				"Seagulls",
+				"Bowerbirds",
+				"Magpies"
+			],
+			"answer": "Bowerbirds"
+		},
+		{
+			"question": "Which animal can pause its own aging process?",
+			"options": [
+				"Jellyfish",
+				"Tarigrade",
+				"Lobster",
+				"Axolotl"
+			],
+			"answer": "Jellyfish"
+		},
+		{
+			"question": "Which bird can mimic can alarms, chainsaws, camera shutters, and car alarms?",
+			"options": [
+				"Raven",
+				"Lyrebird",
+				"Cockatoo",
+				"Mockingbird"
+			],
+			"answer": "Lyrebird"
+		}
+	]
+}

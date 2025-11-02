@@ -1,0 +1,38 @@
+{
+	"topic": "What is this Programming Language?",
+	"title": "EU Capitals Quiz",
+	"quizMessage": "Test your knowledge on programming languages!",
+	"questions":
+	[
+		{
+			"question": "Brainf***",
+			"options": [
+				"A Real esoteric language 🤪",
+				"Fake, made up language 🤥",
+				"A Code editor 🖊️",
+				"A Meme from the 2000s 😂"
+			],
+			"answer": "A Real esoteric language 🤪"
+		},
+		{
+			"question": "Whirl",
+			"options": [
+				"Real Obscure language 🤓",
+				"Fake Name 🐍",
+				"A Game Engine 🎮",
+				"Javascript Library 🌐"
+			],
+			"answer": "Real Obscure language 🤓"
+		},
+		{
+			"question": "ZorbLang",
+			"options": [
+				"A new language being developed 🚀",
+				"Language for Game Dev 🎮",
+				"Fake, made up language 🤥",
+				"A Framework for Web Dev 🌐"
+			],
+			"answer": "Fake, made up language 🤥"
+		}
+	]
+}

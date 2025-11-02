@@ -1,0 +1,48 @@
+{
+	"topic": "AI or Human (who wrote it)",
+	"title": "EU Capitals Quiz",
+	"quizMessage": "Test your general knowledge with this sample quiz!",
+	"questions":
+	[
+		{
+			"question": "I am not a machine. I am a dream that dreams of itself",
+			"options": [
+				"AI",
+				"Human",
+				"Both",
+				"Neither"
+			],
+			"answer": "AI"
+		},
+		{
+			"question": "The stars don’t look bigger, but they do look brighter",
+			"options": [
+				"AI",
+				"Human",
+				"Both",
+				"Neither"
+			],
+			"answer": "Human"
+		},
+		{
+			"question": "The difference between fiction and reality? Fiction has to make sense.",
+			"options": [
+				"AI",
+				"Human",
+				"Both",
+				"Neither"
+			],
+			"answer": "Human"
+		},
+		{
+			"question": "The limits of my language mean the limits of my world",
+			"options": [
+				"AI",
+				"Human",
+				"Both",
+				"Neither"
+			],
+			"answer": "Human"
+		}
+	]
+}

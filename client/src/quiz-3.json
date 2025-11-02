@@ -1,0 +1,38 @@
+{
+	"topic": "Weird History",
+	"title": "Weird History",
+	"quizMessage": "Test your knowledge on weird history!",
+	"questions":
+	[
+		{
+			"question": "Which President died by eating cherries and iced milk?",
+			"options": [
+				"Zachary Taylor",
+				"James Polk",
+				"Millard Fillmore",
+				"William Taft"
+			],
+			"answer": "Zachary Taylor"
+		},
+		{
+			"question": "What caused WW1?",
+			"options": [
+				"A poisoning",
+				"Someone's uber driver was incompetent",
+				"An explosion of a ship",
+				"An infiltration gone wrong"
+			],
+			"answer": "Someone's uber driver was incompetent"
+		},
+		{
+			"question": "Which scientist died like snow white?",
+			"options": [
+				"Isaac Newton",
+				"Ada Lovelace",
+				"Nikola Tesla",
+				"Alan Turing"
+			],
+			"answer": "Alan Turing"
+		}
+	]
+}
